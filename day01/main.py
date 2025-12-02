@@ -7,7 +7,7 @@ part_2 = 0
 for d, n in lines:
     clicks = n // 100
     rotation = n % 100
-    
+
     part_2 += clicks
 
     if d == "R":
@@ -18,7 +18,7 @@ for d, n in lines:
         if pos != 0 and pos - rotation <= 0:
             part_2 += 1
         pos = (pos - rotation) % 100
-        
+
     if pos == 0:
         part_1 += 1
 
