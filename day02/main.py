@@ -8,12 +8,12 @@ for lb, ub in intervals:
     for n in range(lb, ub + 1):
         s = str(n)
 
-        if len(s) % 2 == 0 and s[len(s) // 2 :] == s[: len(s) // 2]:
+        if len(s) % 2 == 0 and s[: len(s) // 2] * 2 == s:
             part_1 += n
 
         for k in range(1, len(s) // 2 + 1):
             n_chunks, remainder = divmod(len(s), k)
-            if remainder == 0 and all(s[:k] == s[k * i : k * (i + 1)] for i in range(n_chunks)):
+            if remainder == 0 and s[:k] * n_chunks == s:
                 part_2 += n
                 break
 
