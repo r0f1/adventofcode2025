@@ -14,17 +14,15 @@ for id in ids:
 print(result)
 
 # Part 2
-sorted_intervals = sorted(intervals)
 
 count = 0
 n = 0
-while len(sorted_intervals) > 0:
-    curr_lb, curr_ub = sorted_intervals.pop(0)
-    new_n = max(n, curr_ub)
-    if curr_lb <= n:
+for lb, ub in sorted(intervals):
+    new_n = max(n, ub)
+    if lb <= n:
         count += new_n - n
     else:
-        count += curr_ub - curr_lb + 1
+        count += ub - lb + 1
     n = new_n
 
 print(count)
