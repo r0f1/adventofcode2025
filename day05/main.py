@@ -14,7 +14,6 @@ for id in ids:
 print(result)
 
 # Part 2
-
 count = 0
 n = 0
 for lb, ub in sorted(intervals):
@@ -24,5 +23,4 @@ for lb, ub in sorted(intervals):
     else:
         count += ub - lb + 1
     n = new_n
-
 print(count)
